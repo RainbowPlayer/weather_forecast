@@ -1,0 +1,46 @@
+.weather-today {
+  background-color: #1e213a;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-column: 2 / 3;
+  grid-row: 3 / 1;
+}
+
+.weather-today-day {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.weather-today-header {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.weather-today-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.weather-today-temp {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.weather-today-conditions {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.weather-today-countdown {
+  font-size: 16px;
+  font-style: italic;
+  color: #a09fb1;
+}

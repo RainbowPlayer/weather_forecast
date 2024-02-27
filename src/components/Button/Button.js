@@ -1,9 +1,7 @@
-import './style.css'
-
-const Button = ({ content, buttonClass, onClick, disabled }) => {
+const Button = ({ content, className, onClick, disabled }) => {
     return(
         <lable>
-            <button onClick={onClick} className={buttonClass} disabled={disabled} >
+            <button onClick={onClick} className={className} disabled={disabled} >
                 {content}
             </button>
         </lable>

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchCards } from '../../app/dataCardSlice'
 import Card from '../../components/Card/Card'
 import './style.css'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import WeatherPeriod from '../../components/WeatherPeriod/WeatherPeriod'
 import WeatherToday from '../../components/WeatherToday/WeatherToday'
 import ModalWindow from '../../components/ModalWindow/ModalWindow'
@@ -22,10 +22,10 @@ const MainPage = () => {
 
     useEffect(() => {
         dispatch(fetchCards());
-    }, [dispatch]);
+    }, []);
 
     useEffect(() => {
-        if (cards.length > 0) {
+        if (cards.length) {
             setSelectedCity(cards[0].cityName);
             setSelectedDate1(cards[0].date1);
             setSelectedDate2(cards[0].date2);
@@ -45,7 +45,8 @@ const MainPage = () => {
         setSearchTerm(event.target.value);
     }
 
-    const filteredCards = cards.filter(card => card.cityName.toLowerCase().includes(searchTerm.toLowerCase()));
+    const filteredCards = useMemo(() => cards.filter(card => card.cityName.toLowerCase().includes(searchTerm.toLowerCase())), [cards, searchTerm]);
+
     
     return(
         <div className='container-main-page'>
